@@ -4,8 +4,8 @@ const productDetail = joi.object().keys({
 
     title: joi.string().required(),
     description: joi.string().required(),
-    price: joi.string().required(),
-    tags: joi.array()
+    price: joi.number().integer().required(),
+    image: joi.string()
 
 })
 

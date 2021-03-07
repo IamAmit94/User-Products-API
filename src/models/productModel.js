@@ -1,5 +1,4 @@
-const { Mongoose } = require('mongoose')
-
+const { string } = require('joi')
 const mongoose =  require('mongoose')
 
 const productSchema = new mongoose.Schema({
@@ -13,17 +12,17 @@ const productSchema = new mongoose.Schema({
     price:{
         type: String
     },
-    userId:{},
-    tags:{
-        type: Array,
-        require: true
+    userId:{
+        type: mongoose.Schema.Types.ObjectId, ref:'user',
+        required: true
     },
     image:{
         type: String
-    },
-
+           },
 },
-{timestamps: true})
+{
+    timestamps: true
+})
 
 const prodcut = mongoose.model('product', productSchema)
 
