@@ -27,7 +27,7 @@ Router.get('/AllProduct',authorized.verifyToken ,accountController1.readProduct)
 
 Router.put('/UpdateProduct/:productId',authorized.verifyToken,accountController1.updateProduct)
 
-Router.delete('RemoveProduct/:delId',authorized.verifyToken ,accountController1.deleteProduct)
+Router.delete('/RemoveProduct/:delId',authorized.verifyToken ,accountController1.deleteProduct)
 
 
 module.exports = Router
